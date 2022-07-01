@@ -1,7 +1,6 @@
 pipeline {
      environment {
-       ID_DOCKER = "docker-hub.cgerbaud.fr"
-       HUB_USER = "cedric"
+       ID_DOCKER = "cedric"
        HUB_URL = "docker-hub.cgerbaud.fr"
        IMAGE_NAME = "alpinehelloworld"
        IMAGE_TAG = "latest"
