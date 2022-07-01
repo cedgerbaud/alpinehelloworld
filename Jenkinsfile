@@ -7,7 +7,7 @@ pipeline {
        IMAGE_TAG = "latest"
        STAGING = "${ID_DOCKER}-staging"
        PRODUCTION = "${ID_DOCKER}-production"
-       DOCKERHUB_PASSWORD = credentials('docker-registry-common-creds-psw')
+       DOCKERHUB_PASSWORD = credentials('docker-registry')
      }
      agent none
      stages {
@@ -58,7 +58,7 @@ pipeline {
           steps {
              script {
                sh '''
-                   echo $DOCKERHUB_PASSWORD | docker login $HUB_URL -u $HUB_USER --password-stdin
+                   echo $DOCKERHUB_PASSWORD_PWD | docker login $HUB_URL -u $HUB_USER --password-stdin
                    docker push ${HUB_URL}/$IMAGE_NAME:$IMAGE_TAG
                '''
              }
