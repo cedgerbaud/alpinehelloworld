@@ -7,7 +7,7 @@ pipeline {
        IMAGE_TAG = "latest"
        STAGING = "${ID_DOCKER}-staging"
        PRODUCTION = "${ID_DOCKER}-production"
-       DOCKERHUB_PASSWORD = credentials('docker-registry')
+       DOCKERHUB_PASSWORD = credentials('docker-registry-key')
      }
      agent none
      stages {
