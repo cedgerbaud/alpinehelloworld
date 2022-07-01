@@ -24,6 +24,7 @@ pipeline {
             steps {
                script {
                  sh '''
+                    docker rm -f $IMAGE_NAME
                     docker run --name $IMAGE_NAME -d -p 8082:5000 -e PORT=5000 ${HUB_URL}/$IMAGE_NAME:$IMAGE_TAG
                     sleep 5
                  '''
